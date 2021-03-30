@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form, Jumbotron, Nav, Navbar } from 'react-bootstrap';
 import logo from './logo.png';
 import './Header.css';
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className="pt-3 pb-3 container-fluid">
@@ -9,12 +10,12 @@ const Header = () => {
                 <Navbar.Brand href="/home"><img src={logo} className="brand-logo" alt="logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ml-auto">
-                        <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/donation">Donation</Nav.Link>
-                        <Nav.Link href="/addEvent">Events</Nav.Link>
-                        <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/blog" className="mr-3">Blog</Nav.Link>
+                    <Nav id="nav-link" className="ml-auto d-flex justify-content-space-between">
+                        <Link className="m-2 text-dark" to="/home">Home</Link>
+                        <Link className="m-2 text-dark" to="/donation">Donation</Link>
+                        <Link className="m-2 text-dark" to="/addEvent">Events</Link>
+                        <Link className="m-2 text-dark" to="/login">Login</Link>
+                        <Link className="m-2 text-dark" to="/blog">Blog</Link>
                     </Nav>
                     <Button variant="primary" className="mr-3 ">Register</Button>
                     <Button variant="secondary">Admin</Button>

@@ -11,7 +11,7 @@ const AddEvents = () => {
             imageURL: imageURL
         }
         console.log(eventData)
-        const url = 'http://localhost:5000/addEvent';
+        const url = 'https://salty-savannah-07120.herokuapp.com/addEvent';
         fetch(url, {
             method: 'POST',
             headers:{'Content-Type' : 'application/json'},
