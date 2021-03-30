@@ -1,14 +1,18 @@
 import React from 'react';
+import { Button, Card } from 'react-bootstrap';
 
 const Event = ({event}) => {
     const deleteEvent = id => {
         
     }
     return (
-        <div className="col-md-3">
-            <img style={{height: '300px'}} src={event.imageURL} alt=""/>
-            <h3>{event.name} <button onClick={() => deleteEvent(event._id)}>Delete</button></h3>    
-        </div>
+        <Card className="mb-4 shadow">
+        <Card.Img variant="top" style={{height: '300px'}} src={event.imageURL} />
+        <Card.Body>
+          <Card.Title>{event.name}</Card.Title>
+          <Button variant="primary"  onClick={() => deleteEvent(event._id)}>Delete</Button>
+        </Card.Body>
+      </Card>
     );
 };
 

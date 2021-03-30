@@ -1,0 +1,10 @@
+.login-title{
+    font-weight:700;
+}
+#login-form{
+    height: 100vh;
+    background-color: aliceblue;
+}
+.logo img{
+    width:250px;
+}

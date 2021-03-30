@@ -8,33 +8,33 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import AddEvents from './components/Event/AddEvents';
+import Header from './components/Header/Header';
+import Login from './components/Login/Login';
 function App() {
   return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/addEvents">Add Events</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
+    <div id="bg-image">
+      <div className="shade">
+        <Router>
+          <Switch>
 
-        <hr />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/addEvents">
-          <AddEvents/>
-          </Route>
-        </Switch>
+            <Route exact path="/">
+              <Header />
+              <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route path="/home">
+            <Header />
+              <Home />
+            </Route>
+            <Route path="/addEvent">
+              <AddEvents />
+            </Route>
+          </Switch>
+        </Router>
       </div>
-    </Router>
+    </div>
   );
 }
 
